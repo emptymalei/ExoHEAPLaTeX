@@ -16,6 +16,7 @@
 \usepackage{times}
 
 \usepackage{graphicx}
+\usepackage{amsmath}
 
 % The preamble here sets up a lot of new/revised commands and
 % environments.  It's annoying, but please do *not* try to strip these
@@ -173,6 +174,56 @@ While at this stage, the science behind them is the research of exoplanets, of w
 
 \subsection*{Detection of Exoplanets}
 
+The most popular detection methods are transit and radial velocity, while other methods like direct imaging, microlensing and astrometry etc are less used.
+
+Transit is used by Kepler satellite, on which the satellite detect the period changing of light curve of stars. A planet moving to the line of sight the star could dimmer the star light coming to us. One good aspect about this eclipse method is that we can also collect the spectrum of planet atmosphere thus inferring the composition of it.
+
+The detection take the advantage of two events, transition and occulation. The question is that in what situation we could detect such an event.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{./assets/transit}
+\caption{The idea of transit. Image taken from \cite{2010arXiv1001.2010W}.}
+\label{fig:variety-exo}
+\end{figure}
+
+
+The shadow band \cite{2010arXiv1001.2010W} is the penumbra casted by the planet. To describe this band it requires a frame where the star is stationary and the penumbra of the moving planet draws the shadow band. If the observor can fall inside the umbra of the planet, the transit signal would be stronger.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{./assets/shadowband}
+\caption{Shadow band of the system. Image taken from \cite{2010arXiv1001.2010W}.}
+\label{fig:variety-exo}
+\end{figure}
+
+
+
+Radial velocity helped us to identify the first exoplanet. The method take advantage of the spectrum shift of the host star due to the movement of it. The amplitude of the velocity $k$ determines the shift of the spectrum.
+
+The description of a orbital motion requires five parameters, period $P$, mass of the planet $M_p$, mass of the host star $M_*$, inclination of the orbit $i$, eccentricity of the orbit $e$. Applying these parameters, the amplitude of the radial velocity is calculated as
+
+\begin{equation}
+\frac{P K^3(1-e^2)^{3/2}}{2\pi G} = \frac{M_p^3\sin^3 i}{(M_p+M_*)^2},
+\end{equation}
+
+where $G$ is Newton's constant. The right hand side of the equation is defined as mass function of the system.\cite{2013pss3.book..489W}
+
+
+Period $P$ and amplitude $K$ is what we observe from spectrum, while stellar mass is usually calculated from stellar models. Using these the lower limit of planet mass is determined, which is actually $M_p\sin i$.
+
+
+\section*{High Energy Astrophysics}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -231,6 +282,9 @@ Under the same logic, the author could set up his or her reference list as a sim
 \begin{quote}
 \begin{verbatim}
 {\bf References and Notes}
+
+\bibitem[Winn(2010)]{2010arXiv1001.2010W} Winn, J.~N.\ 2010, 
+arXiv:1001.2010 
 
 \begin{enumerate}
 \item G. Gamow, {\it The Constitution of Atomic Nuclei
@@ -385,6 +439,14 @@ What you should send to {\it Science\/} will depend on the stage your manuscript
 % scibib.bib, and the .bst file Science.bst.  The package scicite.sty
 % was included to format the reference numbers according to *Science*
 % style.
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \bibliography{scibib}
