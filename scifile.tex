@@ -233,16 +233,48 @@ T_t=t_4 - t_1 .
 
 However, there are features in the transit. The flux doesn't drop immediately but drops with some different stages. Thus the other three time scales are defined.
 
-\begin{equation}
+
 \begin{align}
-T_f &= t_3 - t_2, \qquad &\text{full duration} \\
-T_i &= t_2-t_1, \qquad &\text{ingress duration} \\
-T_e &= t_4 - t_3, \qquad &\text{egress duration} .
+T_f &= t_3 - t_2, \qquad \text{full duration} \\
+T_i &= t_2-t_1, \qquad \text{ingress duration} \\
+T_e &= t_4 - t_3, \qquad \text{egress duration} .
 \end{align}
+
+
+As a way to get the idea, circular orbit model shows \cite{2010arXiv1001.2010W}
+
+\begin{align}
+T_t &= \frac{P}{\pi} \sin^{-1} \left( \frac{R_*}{a} \frac{\sqrt{(1+k)^2 - b^2 }}{ \sin i } \right) \\
+T_f &= \frac{P}{\pi} \sin^{-1} \left( \frac{R_*}{a} \frac{\sqrt{(1 - k)^2 - b^2 }}{ \sin i } \right) ,
+\end{align}
+
+where $k = R_p/R_*$, $P$ is the period of the planet, $b = a\cos i/R_*$ is the impact parameter. As shown in the two equations, transit duration gives us information about the radius of the planet.
+
+Even more, the duration of ingress and egress could be different if the orbit is eccentric, i.e.,
+
+\begin{equation}
+\frac{T_e - T_i}{T_e + T_i} \approx e \cos \omega \left( \frac{R_*}{a} \right)^3 (1-b^2)^{3/2} ,
 \end{equation}
 
+though it is small. By knowing $T_t$, $T_f$ and $\frac{T_e - T_i}{T_e + T_i}$ and a factor that corrects the total and full duration and inclination $i$, one could extract information of radius of the planet (related to $k$), eccentricity $e$ and ascending node $\omega$. The correcting factor is, to some approximations, 
+
+\begin{equation}
+\frac{\sqrt{1 - e^2}}{1 \pm e \sin \omega},
+\end{equation}
+
+where $\pm$ corresponds to $T_t$ and $T_f$ respectively.
 
 
+Before we move to radial velocity section, a careful look at the equations is always useful. To simplify our discussion, we use the simplification used in \cite{2010arXiv1001.2010W}, that is $e\to 0$, $R_p \ll R_* \ll a$, $b \ll 1-k$, under which the time scales becomes,
+
+\begin{align}
+T &\approx T_f \approx T_t \approx T_0 \sqrt{1 - b^2}, \\
+\tau & \approx T_e \approx T_i \approx \frac{T_0 k}{\sqrt{1-b^2}},
+\end{align}
+
+where characteristic timescale $T_0 = \frac{R_* P}{\pi a}$ is used.
+
+A larger b or effectively a larger ratio of orbital radius and stellar radius makes the transit ingress and egress duration larger, or effectively gives us a less steeper slope to and out the transit.
 
 
 
@@ -263,7 +295,33 @@ where $G$ is Newton's constant. The right hand side of the equation is defined a
 Period $P$ and amplitude $K$ is what we observe from spectrum, while stellar mass is usually calculated from stellar models. Using these the lower limit of planet mass is determined, which is actually $M_p\sin i$.
 
 
-\section*{High Energy Astrophysics}
+\subsection*{Information of The Planetary System}
+
+Our next task is to squeeze useful information out of these observations. 
+
+When the mass of the star is know, mass of the planet is given by 
+
+\begin{equation}
+\frac{M_p}{(M_p + M_*)^{2/3}} = \frac{K_* \sqrt{1 - e^2}}{\sin i} \left( \frac{P}{2\pi G} \right) ,
+\end{equation}
+
+where the assumption that $\sin i \to 1$ is used, $K_*$ is the semiamplitude of radial velocity defined as $K_* = (v_{r,max} - v_{r,min})/2$ in which $v_{r,max}$ and $v_{r,min}$ are the max and min radial velocities obtained from radial velocity method.
+
+However, if the stellar mass is unknown, $M_p/M_*^{2/3}$ is determined.
+
+The surface gravity can be determined by the following equation \cite{2010arXiv1001.2010W}
+
+\begin{align}
+g_p & = \frac{GM_p}{R_p^2} \\
+& = \frac{2\pi}{P} \frac{ \sqrt{1 - e^2} K_* }{( R_p/a )^2 \sin i} .
+\end{align}
+
+It is obvious that it's fixed by only observation from radial velocity and transit.
+
+To determine the radius of the planet take more efforts because more information about the stellar is needed. Various methods have been developed but we will skip this part because it is not related to our topic.
+
+
+\section*{High Energy Photons}
 
 
 
